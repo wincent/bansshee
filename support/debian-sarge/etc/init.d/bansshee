@@ -1,0 +1,71 @@
+#! /bin/sh
+#
+# bansshee	Start/Stop the bansshee script
+#
+# Author:	Kai Stannigel <kaist@gmx.net>.
+#
+# Version:	@(#)skeleton  2.85-23  28-Jul-2004  miquels@cistron.nl
+#
+
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="SSH attack detection"
+NAME=bansshee
+DAEMON=/usr/local/sbin/$NAME
+#PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+
+# Gracefully exit if the package has been removed.
+test -x $DAEMON || exit 0
+
+#
+#	Function that starts the daemon/service.
+#
+d_start() {
+	if [ -e  /var/lock/bansshee.lock ] ; then
+		echo " failed (already running according to /var/lock/bansshee.lock)"
+		return 1
+	fi
+	$DAEMON
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && /bin/touch /var/lock/bansshee.lock
+	return $RETVAL
+}
+
+#
+#	Function that stops the daemon/service.
+#
+d_stop() {
+	if [ -e  /var/lock/bansshee.lock ]; then
+		kill $(/bin/pidof -o %PPID -x $DAEMON)
+		rm /var/lock/bansshee.lock
+	fi
+}
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: $NAME"
+	d_start
+	echo "."
+	;;
+  stop)
+	echo -n "Stopping $DESC: $NAME"
+	d_stop
+	echo "."
+	;;
+  restart|force-reload)
+	echo -n "Restarting $DESC: $NAME"
+	d_stop
+	sleep 1
+	d_start
+	echo "."
+	;;
+  *)
+	echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0
+

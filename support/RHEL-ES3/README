@@ -1,0 +1,51 @@
+$Id$
+
+This directory contains platform-specific Bansshee support files for Red Hat Enterprise Linux ES release 3.
+
+
+LOGWATCH FILTER FILES
+
+  etc/log.d/conf/services/bansshee.conf
+  etc/log.d/scripts/services/bansshee
+
+
+STARTUP SCRIPT
+
+  etc/rc.d/init.d/bansshee
+
+
+INSTALLATION
+
+To use the filter files, copy them to the appropriate directories:
+
+  sudo /bin/cp etc/log.d/conf/services/bansshee.conf /etc/log.d/conf/services/
+  sudo /bin/cp etc/log.d/scripts/services/bansshee /etc/log.d/scripts/services/
+
+Depending on your configuration you may need to make changes to your existing LogWatch configuration to cleanly integrate 
+the new filters. For example, on the stock Red Hat Enterprise Linux ES release 3 install (Taroon Update 7) it is necessary 
+to edit the following file:
+
+  /etc/log.d/conf/services/secure.conf
+
+By adding "bansshee" to the $ignore_services line as shown below:
+
+  # Use this to ignore certain services in the secure log.
+  # You can ignore as many services as you would like.
+  # (we ignore sshd because its entries are processed by the sshd script)
+  $ignore_services = sshd Pluto stunnel proftpd bansshee
+
+To use the startup script, copy it to the /etc/rc.d/init.d directory:
+
+  sudo /bin/cp etc/rc.d/init.d/bansshee /etc/rc.d/init.d/
+
+Specify that the basshee service should be started at boot time:
+
+  sudo /sbin/chkconfig bansshee on
+
+Confirm that the service will be started at boot:
+
+  sudo /sbin/chkconfig --list bansshee
+
+Start the bansshee service if not already started:
+
+  sudo /sbin/service bansshee start

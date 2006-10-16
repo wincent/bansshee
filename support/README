@@ -1,0 +1,8 @@
+$Id$
+
+This directory contains platform-specific support files for Bansshee. Each subdirectory contains support files for a single 
+platform:
+
+debian-sarge:   Support files for Debian Sarge
+RHEL-ES3:       Support files for Red Hat Enterprise Linux ES release 3
+

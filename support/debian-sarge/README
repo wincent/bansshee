@@ -1,0 +1,15 @@
+$Id$
+
+Debian Sarge support files by Kai Stannigel <kaist@gmx.net>.
+
+    These support files are distributed in the hope that it will be 
+    useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
+    of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+To automatically start/stop bansshee, run the following command:
+
+update-rc.d bansshee defaults 21
+
+(ssh has number 20, so bansshee gets started right after it)
+

@@ -1,0 +1,20 @@
+$Id$
+
+The recommended install location for Bansshee is:
+
+  /usr/local/sbin/bansshee
+
+As a convenience Bansshee comes with a Makefile that can be used to perform this installation by typing:
+
+  sudo make install
+
+To install manually you would use a pair of commands like:
+
+  sudo cp -f bansshee /usr/local/sbin/
+  sudo chmod 755 /usr/local/sbin/bansshee
+
+See the README file for details on configuring, starting and stopping Bansshee.
+
+See the support directory for platform-specific files such as init scripts (for automatic launch at boot time) and LogWatch 
+filters.
+
