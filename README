@@ -33,6 +33,8 @@ Perl
 
 Bansshee requires a recent version of Perl compiled with multithreading support. Specifically it requires the newer "ithreads" (interpreter threads) implementation available in Perl 5.6.0 and later. This version of Bansshee was built and tested using Perl v5.8.0 (built for "i386-linux-thread-multi"). You can check the version of Perl installed on your system and whether it supports multi-threading by passing the -v or -V switch to Perl on the command line (more information on this below).
 
+By default Bansshee expects to find perl installed at /usr/bin/perl; if perl is installed at a different location on your system then you must edit the first line of the bansshee script to reflect the location.
+
 Perl modules
 ============
 
@@ -83,10 +85,7 @@ Bansshee must be run with root privileges so as to be able to make modifications
 
 CONFIGURATION
 
-Bansshee has a number of customizable settings that can be used to modify its behaviour. The settings appear near the top of the "bansshee" script itself under the 
-heading "Default Settings". You may either edit the settings directly in the file itself, or place your customized settings in the "/etc/bansshee.conf" file. Settings in 
-the conf file will override settings in the script. By using the conf file you can upgrade the Bansshee script without having to re-apply your customizations to the 
-script each time.
+Bansshee has a number of customizable settings that can be used to modify its behaviour. The settings appear near the top of the "bansshee" script itself under the heading "Default Settings". You may either edit the settings directly in the file itself, or place your customized settings in the "/etc/bansshee.conf" file. Settings in the conf file will override settings in the script. By using the conf file you can upgrade the Bansshee script without having to re-apply your customizations to the script each time.
 
 * permitted_illegal_user
 
@@ -113,9 +112,7 @@ STARTING BANSSHEE
 
 For information on installing Bansshee see the INSTALL file.
 
-For automatic startup at boot time see the platform-specific files in the support directory. If Bansshee has been set up to 
-start automatically at boot time then it should always be started (and stopped) using the same control script. For example, 
-on Red Had Enterprise Linux the following command would be used:
+For automatic startup at boot time see the platform-specific files in the support directory. If Bansshee has been set up to start automatically at boot time then it should always be started (and stopped) using the same control script. For example, on Red Had Enterprise Linux the following command would be used:
 
   sudo service bansshee start
 
@@ -182,8 +179,7 @@ Or the Subversion book:
 
 CONTRIBUTING CODE
 
-To submit changes against a copy of Bansshee checked out using Subversion (see OBTAINING BANSSHEE) simply perform an "svn 
-diff" in your working copy and send your diff to the author (contact details below).
+To submit changes against a copy of Bansshee checked out using Subversion (see OBTAINING BANSSHEE) simply perform an "svn diff" in your working copy and send your diff to the author (contact details below).
 
 
 AUTHOR
