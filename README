@@ -19,9 +19,9 @@ Bansshee is a Perl script that runs as a daemon watching for SSH dictionary atta
 
 DONATIONS
 
-Bansshee is provided free of charge under the GPL (see the LICENSE file for details) so it is both free "as in beer" and free "libre". Although it is free you can encourage further development by making a donation and you are encouraged to do so if you find it to be useful. Donations can be sent via PayPal to author at win@wincent.org or via the website:
+Bansshee is provided free of charge under the GPL (see the LICENSE file for details) so it is both free "as in beer" and free "libre". Although it is free you can encourage further development by making a donation and you are encouraged to do so if you find it to be useful. Donations can be sent via PayPal to author at win@wincent.com or via the website:
 
-  http://bansshee.org/donate/
+  http://wincent.com/a/products/bansshee/#donations
 
 
 REQUIREMENTS
@@ -136,7 +136,6 @@ Unlike some other anti-dictionary attack tools currently available, Bansshee mak
 
 BANSSHEE WEBSITE
 
-  http://bansshee.org/
   http://wincent.com/a/products/bansshee/
 
 
