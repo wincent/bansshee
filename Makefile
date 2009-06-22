@@ -1,10 +1,7 @@
-#
 # Makefile
 # Bansshee installation Makefile
 #
-# Created by Wincent Colaiuta, 16 October 2006.
-# Copyright 2006 Wincent Colaiuta.
-# $Id$
+# Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
 
 install:
 	install -d /usr/local/sbin

@@ -1,5 +1,3 @@
-$Id$
-
 BANSSHEE FAQ
 
 If I connect as an invalid user sshd writes the corresponding message to the logfile. Approximately 5 to 60 seconds later 

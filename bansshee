@@ -1,11 +1,7 @@
 #!/usr/bin/perl
-#
 # bansshee
-# Bansshee
 #
-# Created by Wincent Colaiuta on Monday 10 April 2006.
-# Copyright 2006 Wincent Colaiuta
-# $Id$
+# Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
 
 use strict;
 use warnings;

@@ -1,5 +1,3 @@
-$Id$
-
 This directory contains platform-specific support files for Bansshee. Each subdirectory contains support files for a single 
 platform:
 
