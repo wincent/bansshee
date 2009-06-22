@@ -141,42 +141,27 @@ BANSSHEE WEBSITE
 
 OBTAINING BANSSHEE
 
-The latest released version of Bansshee can be downloaded from the website (link appears above).
+The latest released version of Bansshee can be downloaded from the website
+(link appears above).
 
-The latest development version of Bansshee can be checked out via Subversion:
+You can clone the source code repository using Git:
 
-  svn co svn://svn.wincent.com/bansshee/trunk
+  git clone git://git.wincent.com/bansshee.git
 
-To check out a specific version, use the appropriate tag:
+Or explore the repository contents using a browser:
 
-  svn co svn://svn.wincent.com/bansshee/tags/1.0-RELEASE
+  http://git.wincent.com/bansshee.git
 
-Example tags: 1.0-RELEASE
+Older versions can be checked out via Subversion:
 
-To check out the latest release in a specific branch, specify the branch:
-
-  svn co svn://svn.wincent.com/bansshee/branches/1.0
-
-Example branches: 1.0
-
-Note that at the time of writing there are no special branches; all development occurs on the main trunk.
-
-To update an existing working copy:
-
-  svn up
-
-For more information on using Subversion please see the official Subversion website:
-
-  http://subversion.tigris.org/
-
-Or the Subversion book:
-
-  http://svnbook.red-bean.com/
+  svn co svn://svn.wincent.com/bansshee
 
 
 CONTRIBUTING CODE
 
-To submit changes against a copy of Bansshee checked out using Subversion (see OBTAINING BANSSHEE) simply perform an "svn diff" in your working copy and send your diff to the author (contact details below).
+To submit changes to Bansshee please use "git format-patch" (see OBTAINING
+BANSSHEE for information on cloning the repository) and send your patch via
+email to win@wincent.com.
 
 
 AUTHOR
