@@ -110,7 +110,7 @@ STARTING BANSSHEE
 
 For information on installing Bansshee see the INSTALL file.
 
-For automatic startup at boot time see the platform-specific files in the support directory. If Bansshee has been set up to start automatically at boot time then it should always be started (and stopped) using the same control script. For example, on Red Had Enterprise Linux the following command would be used:
+For automatic startup at boot time see the platform-specific files in the contrib directory. If Bansshee has been set up to start automatically at boot time then it should always be started (and stopped) using the same control script. For example, on Red Had Enterprise Linux the following command would be used:
 
   sudo service bansshee start
 

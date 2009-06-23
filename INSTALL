@@ -18,5 +18,5 @@ To install manually you would use a pair of commands like:
 
 See the README file for details on configuring, starting and stopping Bansshee.
 
-See the support directory for platform-specific files such as init scripts (for
+See the contrib directory for platform-specific files such as init scripts (for
 automatic launch at boot time) and LogWatch filters.
