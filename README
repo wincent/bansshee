@@ -25,11 +25,12 @@ before the internal counters are reset.
 
 DONATIONS
 
-Bansshee is provided free of charge under the GPL (see the LICENSE file for
-details) so it is both free "as in beer" and free "libre". Although it is free
-you can encourage further development by making a donation and you are
-encouraged to do so if you find it to be useful. Donations can be sent via
-PayPal to author at win@wincent.com or via the website:
+Bansshee is provided free of charge under the simplified, 2-clause version of
+the BSD license, as used by FreeBSD (see the LICENSE file for details) so it is
+both free "as in beer" and free "libre". Although it is free you can encourage
+further development by making a donation and you are encouraged to do so if you
+find it to be useful. Donations can be sent via PayPal to author at
+win@wincent.com or via the website:
 
   http://wincent.com/a/products/bansshee/#donations
 
