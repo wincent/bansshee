@@ -1,6 +1,10 @@
-This directory contains platform-specific support files for Bansshee. Each subdirectory contains support files for a single 
-platform:
+This directory contains platform-specific support files for Bansshee. They are
+not officially a part of Bansshee itself, but are provided as a convenience to
+users.
 
-debian-sarge:   Support files for Debian Sarge
-RHEL-ES3:       Support files for Red Hat Enterprise Linux ES release 3
+Each subdirectory contains support files for a single platform:
 
+  - debian-sarge:   support files for Debian Sarge
+  - RHEL-5.3:       support files for Red Hat Enterprise Linux 5.3
+  - RHEL-ES3:       support files for Red Hat Enterprise Linux ES release 3
+  - ubuntu-dapper:  support files for Ubuntu Dapper
