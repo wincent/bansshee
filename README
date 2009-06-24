@@ -153,6 +153,81 @@ and removing any IP addresses which have been in the blocklist for more than
 "unban_wait" seconds. Defaults to 300 (5 minutes).
 
 
+PLATFORM-SPECIFIC CONFIGURATION
+
+In addition to the already-discussed configuration variables, there are a
+number of settings which may need to be adjusted depending in order to make
+Bansshee work on different platforms. These settings are:
+
+* logpath
+
+The path to the logfile that Bansshee should watch in order to detect breakin
+attempts. Defaults to "/var/log/secure".
+
+* illegal_user_regex
+
+A regular expression used to detect log entries corresponding to attempt to log
+in using an illegal/invalid (non-existent) user. The regular expression should
+contain two parenthesised subpatterns, one for the username and one for the
+remote IP address, so that Bansshee can extract those subpatterns. If you need
+to use brackets for any other part within the regular expression than you
+should use a non-capturing subpattern -- denoted with (?:subpattern) --
+instead; see the RHEL 5.3 configuration file in the contrib directory for an
+example of this.
+
+* incorrect_pass_regex
+
+Like the illegal_user_regex, this setting provides a regular expression to
+detect connection attempts which supply a valid user but an incorrect password.
+Again, two parenthesised subpatterns (for username and remote IP) are required
+so that Bansshee can extract the corresponding information.
+
+* iptables
+
+The path to the iptables executable. Defaults to "/sbin/iptables".
+
+* iptables_create
+
+Arguments that should be passed to iptables to create the BANSSHEE chain.
+Defaults to "-N BANSSHEE".
+
+* iptables_add
+
+Arguments that should be passed to iptables to add the BANSSHEE jump rule.
+Defaults to "-I INPUT -p tcp --dport ssh -j BANSSHEE".
+
+* iptables_remove
+
+Arguments that should be passed to iptables to remove the BANSSHEE jump rule.
+Defaults to "-D INPUT -p tcp --dport ssh -j BANSSHEE".
+
+* iptables_flush
+
+Arguments that should be passed to iptables to flush the BANSSHEE chain.
+Defaults to "-F BANSSHEE".
+
+* iptables_delete
+
+Arguments that should be passed to iptables to delete the BANSSHEE chain.
+Defaults to "-X BANSSHEE".
+
+* id
+
+Command that should be executed to determine if Bansshee is running as root.
+Defaults to "/usr/bin/id -u".
+
+* log_facility
+
+Controls Bansshee's logging of status messages to /var/log/secure or similar.
+Defaults to "authpriv".
+
+The default settings were developed and tested using Red Hat Enterprise Linux
+ES3 and may work with other platforms.
+
+In addition there are some user-contributed support files in the "contrib"
+directory that may be helpful when setting up Bansshee on other platforms.
+
+
 STARTING BANSSHEE
 
 For information on installing Bansshee see the INSTALL file.
