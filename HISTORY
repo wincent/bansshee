@@ -1,10 +1,21 @@
 BANSSHEE CHANGE LOG
 
+This is the highlevel changelog. For detailed information on code-level changes
+see the official Git repository (as described in the README).
+
+
+Version 1.0.1 (24 June 2009):
+=============================
+
+* Add support files for RHEL 5.3.
+* Change to BSD (2-clause, simplified) license.
+
 Version 1.0 (16 October 2006):
+==============================
 
 * First public availability.
 
 Version 1.0-internal (12 April 2006):
+=====================================
 
 * Original version (not publicly released).
-
