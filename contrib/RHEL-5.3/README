@@ -1,20 +1,43 @@
 This directory contains platform-specific Bansshee support files for Red Hat
 Enterprise Linux 5.3.
 
+  - configuration file:
+    - etc/bansshee.conf
+  - logwatch filter files:
+    - etc/logwatch/conf/services/bansshee.conf
+    - etc/logwatch/conf/services/secure.conf
+    - etc/logwatch/scripts/services/bansshee
+  - startup script:
+    - etc/rc.d/init.d/bansshee
 
-LOGWATCH FILTER FILES
 
-  etc/logwatch/conf/services/bansshee.conf
-  etc/logwatch/conf/services/secure.conf
-  etc/logwatch/scripts/services/bansshee
+DIFFERENCES FROM THE DEFAULT SETTINGS
 
+The default settings in the bansshee script were designed to work with Red Hat
+Enterprise Linux ES 3. There are three main differences when moving to RHEL
+5.3:
 
-STARTUP SCRIPT
-
-  etc/rc.d/init.d/bansshee
+  (1) Some of the status messages emitted by sshd have changed slightly:
+      - what was previously "illegal user" is now "invalid user"
+      - instead of just "Failed password", we might also see now "Failed none"
+        and "Failed publickey"
+  (2) The logwatch configuration files have moved from "/etc/log.d" to
+      "/etc/logwatch". In addition, a minor bug in the previous version of the
+      logwatch script has been corrected (previously it tried to match
+      "appended" when it should have matched "added").
+  (3) Appending the BANSSHEE chain to the default firewall rules will have no
+      effect because by the time the initial INPUT chain is finished all SSH
+      traffic will already have been accepted; we therefore have to insert the
+      chain rather than appended. (Obviously if you have a custom set of
+      firewall rules then you may want to tweak this even further, inserting
+      the BANSSHEE chain before a specific rule number.)
 
 
 INSTALLATION
+
+To use the configuration file, copy it into the /etc directory:
+
+  sudo cp etc/bansshee.conf /etc/bansshee.conf
 
 To use the filter files, copy them to the appropriate directories:
 
@@ -38,3 +61,8 @@ Confirm that the service will be started at boot:
 Start the bansshee service if not already started:
 
   sudo service bansshee start
+
+AUTHOR
+
+These RHEL 5.3 support files were prepared by Wincent Colaiuta
+(win@wincent.com).
