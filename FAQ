@@ -1,16 +1,22 @@
 BANSSHEE FAQ
 
-If I connect as an invalid user sshd writes the corresponding message to the logfile. Approximately 5 to 60 seconds later 
-Bansshee writes its message. Is this delay normal/intended?
+If I connect as an invalid user sshd writes the corresponding message to the
+logfile. Approximately 5 to 60 seconds later Bansshee writes its message. Is
+this delay normal/intended?
+============================================================================
 
-Yes, the delay is normal. It occurs because Bansshee uses the File::Tail CPAN module. From the File::Tail documentation:
+Yes, the delay is normal. It occurs because Bansshee uses the File::Tail CPAN
+module. From the File::Tail documentation:
 
-'The module tries very hard NOT to "busy-wait" on a file that has little traffic. Any time it reads new data from the file, 
-it counts the number of new lines, and divides that number by the time that passed since data were last written to the file 
-before that. That is considered the average time before new data will be written. When there is no new data to read, 
-File::Tail sleeps for that number of seconds. Thereafter, the waiting time is recomputed dynamicaly. Note that File::Tail 
-never sleeps for more than the number of seconds set by maxinterval.'
+  'The module tries very hard NOT to "busy-wait" on a file that has little
+  traffic. Any time it reads new data from the file, it counts the number of
+  new lines, and divides that number by the time that passed since data were
+  last written to the file before that. That is considered the average time
+  before new data will be written. When there is no new data to read,
+  File::Tail sleeps for that number of seconds. Thereafter, the waiting time is
+  recomputed dynamicaly. Note that File::Tail never sleeps for more than the
+  number of seconds set by maxinterval.'
 
 For more information about File::Tail see:
 
-http://search.cpan.org/~mgrabnar/File-Tail/
+  http://search.cpan.org/~mgrabnar/File-Tail/
