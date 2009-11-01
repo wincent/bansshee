@@ -1,0 +1,46 @@
+This directory contains platform-specific Bansshee support files for Red Hat
+Enterprise Linux 5.4.
+
+  - configuration file:
+    - etc/bansshee.conf
+  - logwatch filter files:
+    - etc/logwatch/conf/services/bansshee.conf
+    - etc/logwatch/conf/services/secure.conf
+    - etc/logwatch/scripts/services/bansshee
+  - startup script:
+    - etc/rc.d/init.d/bansshee
+
+
+INSTALLATION
+
+To use the configuration file, copy it into the /etc directory:
+
+  sudo cp etc/bansshee.conf /etc/bansshee.conf
+
+To use the filter files, copy them to the appropriate directories:
+
+  sudo cp etc/logwatch/conf/services/* \
+          /etc/logwatch/conf/services/
+  sudo cp etc/logwatch/scripts/services/bansshee \
+          /etc/logwatch/scripts/services/
+
+To use the startup script, copy it to the /etc/rc.d/init.d directory:
+
+  sudo cp etc/rc.d/init.d/bansshee /etc/rc.d/init.d/
+
+Specify that the basshee service should be started at boot time:
+
+  sudo chkconfig bansshee on
+
+Confirm that the service will be started at boot:
+
+  sudo chkconfig --list bansshee
+
+Start the bansshee service if not already started:
+
+  sudo service bansshee start
+
+AUTHOR
+
+These RHEL 5.4 support files were prepared by Wincent Colaiuta
+(win@wincent.com).
